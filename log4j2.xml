@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration name="ConfigTest" packages="io.logz.log4j2">
+    <Properties>
+        <Property name="LOG_PATTERN">%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} %p %m%n</Property>
+    </Properties>
+    <Appenders>
+        <LogzioAppender name="Logzio">
+            <logzioToken>LOGZIO_TOKEN</logzioToken>
+            <logzioUrl>LOGZIO_LISTENER</logzioUrl>
+            <logzioType>log4jJavaLog</logzioType>
+            <debug>True</debug>
+        </LogzioAppender>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%m%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="Logzio"/>
+        </Root>
+    </Loggers>
+</Configuration>
