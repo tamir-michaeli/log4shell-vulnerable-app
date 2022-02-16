@@ -18,5 +18,4 @@ public class MainController {
         logger.info("Received a request for API version " + apiVersion);
         return "Version 1.0.1";
     }
-
 }
